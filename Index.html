@@ -1,0 +1,545 @@
+<!--
+=============================================================
+  ГЛОБАЛ74 — Редизайн сайта
+  Структура проекта:
+    /index.html       ← этот файл (HTML-разметка)
+    /css/style.css    ← всё из блока <style> ниже
+    /js/main.js       ← всё из блока <script> ниже
+    /img/             ← изображения (hero, about, продукция)
+    /fonts/           ← если подключать локально через @font-face
+=============================================================
+-->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <!-- ═══════════════════════════════════════════════
+     META / HEAD
+     Файл: index.html → <head>
+═══════════════════════════════════════════════ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>Купить строительные материалы по всей России — Глобал74</title>
+    <meta name="description" content="Глобал74 — прямые поставки строительных материалов в Мариуполь, Луганск, Мелитополь. Широкий ассортимент, гарантия качества, доставка.">
+    <meta name="keywords" content="строительные материалы Мариуполь, купить стройматериалы Луганск, поставки стройматериалов Мелитополь, опт, кирпич, цемент, песок, доставка">
+
+    <!-- Open Graph (для соцсетей и мессенджеров) -->
+    <meta property="og:title" content="Купить стройматериалы по всей России — Глобал74">
+    <meta property="og:description" content="Прямые поставки строительных материалов в Мариуполь, Луганск и Мелитополь. Доставка по региону, гарантия качества.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Глобал74">
+    <meta property="og:url" content="https://74global.ru/">
+    <meta property="og:image" content="https://74global.ru/img/preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- если есть картинка превью -->
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Верификация -->
+    <meta name="yandex-verification" content="ВАШ_КОД_ОТСЮДА: https://webmaster.yandex.ru/">
+    <meta name="google-site-verification" content="ВАШ_КОД_ОТСЮДА: https://search.google.com/search-console">
+
+    <!-- Остальное -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="color-scheme" content="light only">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — НАВИГАЦИЯ
+     → index.html
+═══════════════════════════════════════════════ -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">ГЛОБАЛ<span>74</span></a>
+
+        <ul class="nav-links">
+            <li><a href="#about">О компании</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#products">Продукция</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-cta">Получить КП</a>
+
+        <!-- burger — виден только на мобильных (CSS: display:none по умолчанию) -->
+        <button class="burger" id="burger" aria-label="Открыть меню">
+    <span></span><span></span><span></span>
+  </button>
+    </nav>
+
+    <!-- мобильное меню (скрыто по умолчанию, управляется JS) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="closeMenu()">О компании</a>
+        <a href="#advantages" onclick="closeMenu()">Преимущества</a>
+        <a href="#products" onclick="closeMenu()">Продукция</a>
+        <a href="#contact" onclick="closeMenu()">Контакты</a>
+        <a href="#contact" class="mobile-cta" onclick="closeMenu()">Получить КП</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — HERO
+     → index.html
+     Изображения: /img/hero-bg.jpg (фон правой панели)
+═══════════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-left">
+            <div class="hero-badge">С 2005 года · Челябинск</div>
+
+            <h1 class="hero-title">
+                Строим<br>
+                <em>надёжность.</em> Поставляем
+                <br>качество
+            </h1>
+
+            <p class="hero-sub">
+                Прямые поставки строительных материалов от заводов-производителей. Оптом по всей России — без посредников, с гарантией качества.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#products" class="btn-primary">Смотреть продукцию →</a>
+                <a href="tel:+79227200233" class="btn-ghost">☎ +7 922 720-02-33</a>
+            </div>
+
+            <!-- ключевые цифры -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-num">20+</div>
+                    <div class="stat-label">Лет на рынке</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">5000+</div>
+                    <div class="stat-label">Наименований</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">24ч</div>
+                    <div class="stat-label">Срок доставки</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- декоративная правая панель (скрыта на мобильных) -->
+        <div class="hero-right">
+            <div class="hero-img-wrap">
+                <img src="img/hero-bg.jpg" alt="Главное изображения">
+                <div class="hero-grid-pattern"></div>
+            </div>
+            <div class="hero-feature-cards">
+                <div class="feature-chip">
+                    <div class="feature-chip-icon">🏭</div>
+                    <div>
+                        <div class="feature-chip-text">Прямые поставки</div>
+                        <div class="feature-chip-sub">От заводов-производителей</div>
+                    </div>
+                </div>
+                <div class="feature-chip">
+                    <div class="feature-chip-icon">📦</div>
+                    <div>
+                        <div class="feature-chip-text">Собственный склад</div>
+                        <div class="feature-chip-sub">Быстрая отгрузка</div>
+                    </div>
+                </div>
+                <div class="feature-chip">
+                    <div class="feature-chip-icon">✅</div>
+                    <div>
+                        <div class="feature-chip-text">Сертифицировано</div>
+                        <div class="feature-chip-sub">ГОСТ и ТУ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-big-text">74</div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — БЕГУЩАЯ СТРОКА (ticker)
+     → index.html
+     Дублируем элементы ×2 для бесшовного цикла
+═══════════════════════════════════════════════ -->
+    <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">Кирпич и блоки</span>
+            <span class="ticker-item">Цемент и сухие смеси</span>
+            <span class="ticker-item">Арматура</span>
+            <span class="ticker-item">Кровельные материалы</span>
+            <span class="ticker-item">Межкомнатные двери</span>
+            <span class="ticker-item">Утеплители</span>
+            <span class="ticker-item">Гидроизоляция</span>
+            <span class="ticker-item">Крепёж</span>
+            <span class="ticker-item">Опалубка</span>
+            <!-- дубль для бесшовного цикла -->
+            <span class="ticker-item">Кирпич и блоки</span>
+            <span class="ticker-item">Цемент и сухие смеси</span>
+            <span class="ticker-item">Арматура</span>
+            <span class="ticker-item">Кровельные материалы</span>
+            <span class="ticker-item">Межкомнатные двери</span>
+            <span class="ticker-item">Утеплители</span>
+            <span class="ticker-item">Гидроизоляция</span>
+            <span class="ticker-item">Крепёж</span>
+            <span class="ticker-item">Опалубка</span>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — О КОМПАНИИ
+     → index.html
+     Изображения: /img/about.jpg (в .about-img-frame)
+═══════════════════════════════════════════════ -->
+    <section id="about">
+
+        <div class="about-visual reveal">
+            <div class="about-img-frame">
+                <div class="grid-overlay"></div>
+                <img src="img/O nas.png" alt="О компании">
+                <!--<div class="center-icon">🏗️</div>-->
+
+            </div>
+            <div class="about-badge-float">
+                <strong>2005</strong>
+                <span>Год основания</span>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <div class="section-tag reveal">О компании</div>
+            <h2 class="section-title reveal reveal-delay-1">Надёжный партнёр<br>в Челябинске</h2>
+
+            <p class="reveal reveal-delay-2">
+                Глобал74 — с 2005 года надёжный партнёр в сфере оптовых поставок строительных материалов и производства межкомнатных дверей. За годы работы выстроили стабильные отношения с поставщиками и доказали, что на нас можно положиться.
+            </p>
+            <p class="reveal reveal-delay-2">
+                Предлагаем всё для стройки и ремонта: кирпич, блоки, цемент, арматуру, кровлю и многое другое. Производим современные межкомнатные двери. Всё напрямую от производителей — без наценок посредников.
+            </p>
+
+            <div class="about-features reveal reveal-delay-3">
+                <div class="about-feat">
+                    <div class="about-feat-title">🏭 Прямые поставки</div>
+                    <div class="about-feat-sub">Только от заводов-производителей</div>
+                </div>
+                <div class="about-feat">
+                    <div class="about-feat-title">🚚 Свой автопарк</div>
+                    <div class="about-feat-sub">Доставка по городу и области</div>
+                </div>
+                <div class="about-feat">
+                    <div class="about-feat-title">📋 Сертификация</div>
+                    <div class="about-feat-sub">Продукция по ГОСТ и ТУ</div>
+                </div>
+                <div class="about-feat">
+                    <div class="about-feat-title">🤝 Индивидуальный подход</div>
+                    <div class="about-feat-sub">Помощь в подборе и расчёте</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — ПРЕИМУЩЕСТВА
+     → index.html
+═══════════════════════════════════════════════ -->
+    <section id="advantages">
+
+        <div class="adv-header">
+            <div>
+                <div class="section-tag reveal">Наши преимущества</div>
+                <h2 class="section-title reveal reveal-delay-1">Почему выбирают<br>Глобал74</h2>
+            </div>
+            <p class="section-body reveal" style="margin-bottom:0; max-width:360px;">
+                Частные застройщики, крупные компании и профессионалы отрасли доверяют нам свои проекты уже 20 лет.
+            </p>
+        </div>
+
+        <div class="adv-grid">
+
+            <div class="adv-card reveal">
+                <div class="adv-num">01</div>
+                <div class="adv-icon">🚛</div>
+                <div class="adv-title">Надёжная логистика</div>
+                <div class="adv-desc">Доставка в течение 24 часов после подтверждения заказа. Контроль каждого этапа — от оформления до выгрузки на объекте.</div>
+                <ul class="adv-list">
+                    <li>Минимальные задержки по срокам</li>
+                    <li>Собственный автопарк и партнёры</li>
+                    <li>Гибкая маршрутизация</li>
+                </ul>
+            </div>
+
+            <div class="adv-card reveal reveal-delay-1">
+                <div class="adv-num">02</div>
+                <div class="adv-icon">🏭</div>
+                <div class="adv-title">Прямые поставки от заводов</div>
+                <div class="adv-desc">Только с заводами-производителями. Все товары оригинальные, сертифицированные, соответствуют ГОСТ и ТУ.</div>
+                <ul class="adv-list">
+                    <li>Только официальная продукция</li>
+                    <li>Все товары сертифицированы</li>
+                    <li>Лучшие цены по всей РФ</li>
+                </ul>
+            </div>
+
+            <div class="adv-card reveal reveal-delay-2">
+                <div class="adv-num">03</div>
+                <div class="adv-icon">📦</div>
+                <div class="adv-title">Склады по всей России</div>
+                <div class="adv-desc">Разветвлённая сеть складов — собственных и партнёрских в ключевых регионах. Доставка вне зависимости от местоположения.</div>
+                <ul class="adv-list">
+                    <li>Склады в разных регионах РФ</li>
+                    <li>Быстрая комплектация заказов</li>
+                    <li>Стабильные поставки круглый год</li>
+                </ul>
+            </div>
+
+            <div class="adv-card reveal reveal-delay-1">
+                <div class="adv-num">04</div>
+                <div class="adv-icon">👤</div>
+                <div class="adv-title">Индивидуальный подход</div>
+                <div class="adv-desc">Персональный менеджер на каждый проект. Анализируем запросы и разрабатываем условия под конкретную задачу.</div>
+                <ul class="adv-list">
+                    <li>Персональный менеджер</li>
+                    <li>Возможность отсрочки платежей</li>
+                    <li>Гибкие условия для постоянных клиентов</li>
+                </ul>
+            </div>
+
+            <div class="adv-card reveal reveal-delay-2">
+                <div class="adv-num">05</div>
+                <div class="adv-icon">⏱️</div>
+                <div class="adv-title">Реальные сроки поставки</div>
+                <div class="adv-desc">Поставляем точно в согласованные сроки. Стройка не остановится из-за отсутствия материалов.</div>
+                <ul class="adv-list">
+                    <li>Строгий контроль сроков</li>
+                    <li>Прозрачная логистика</li>
+                    <li>Заблаговременное предупреждение</li>
+                </ul>
+            </div>
+
+            <!-- акцентная карточка — CTA -->
+            <div class="adv-card adv-card-accent reveal reveal-delay-3">
+                <div class="adv-num">✦</div>
+                <div style="padding-top: 48px;">
+                    <div style="font-family: var(--font-head); font-size: 32px; color: var(--c-accent); margin-bottom: 12px; line-height: 1.1;">
+                        Работаем в новых регионах
+                    </div>
+                    <p style="font-size: 19px; color: var(--c-muted); line-height: 1.7; margin-bottom: 24px;">
+                        Мариуполь, Луганск, Мелитополь — всё уже налажено. Поставляем туда, где другие ещё только думают.
+                    </p>
+                    <a href="#contact" class="btn-primary">Связаться →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — ПРОДУКЦИЯ
+     → index.html
+     Иконки заменяются на <img src="/img/products/..."">
+═══════════════════════════════════════════════ -->
+    <section id="products">
+
+        <div class="prod-header">
+            <div>
+                <div class="section-tag reveal">Продукция</div>
+                <h2 class="section-title reveal reveal-delay-1">Всё для стройки<br>и ремонта</h2>
+            </div>
+            <p class="section-body reveal" style="margin-bottom:0; max-width:360px;">
+                Поставки напрямую с заводов. Более 5000 наименований с подробными характеристиками.
+            </p>
+        </div>
+
+        <div class="prod-grid">
+            <div class="prod-card reveal">
+                <div class="prod-card-img">
+
+                    <img src="img/ki.png " alt="О компании ">
+                </div>
+
+                <div class=" prod-card-body ">
+                    <div class="prod-card-title ">Кирпич, блоки, ЖБИ</div>
+                    <div class="prod-card-desc ">Газобетон, пеноблоки, бетонные изделия. Широкий ассортимент под любые конструктивные задачи.</div>
+                </div>
+            </div>
+            <div class="prod-card reveal reveal-delay-1 ">
+                <div class="prod-card-img "><img src="img/su.png " alt="О компании "></div>
+                <!-- /img/products/mix.jpg -->
+                <div class="prod-card-body ">
+                    <div class="prod-card-title ">Сухие смеси</div>
+                    <div class="prod-card-desc ">Клеи, штукатурки, шпаклёвки, наливные полы — всегда в наличии на складе.</div>
+                </div>
+            </div>
+            <div class="prod-card reveal reveal-delay-2 ">
+                <div class="prod-card-img "><img src="img/door.png " alt="О компании "></div>
+                <!-- /img/products/doors.jpg -->
+                <div class="prod-card-body ">
+                    <div class="prod-card-title ">Двери</div>
+                    <div class="prod-card-desc ">Входные и межкомнатные двери различного дизайна для жилых и коммерческих помещений.</div>
+                </div>
+            </div>
+            <div class="prod-card reveal reveal-delay-1 ">
+                <div class="prod-card-img "><img src="img/vata.png " alt="О компании "></div>
+                <!-- /img/products/insulation.jpg -->
+                <div class="prod-card-body ">
+                    <div class="prod-card-title ">Утеплители и гидроизоляция</div>
+                    <div class="prod-card-desc ">Минеральная вата, экструдированный пенополистирол, мастики, мембраны.</div>
+                </div>
+            </div>
+            <div class="prod-card reveal reveal-delay-2 ">
+                <div class="prod-card-img "><img src="img/krep.png " alt="О компании "></div>
+                <!-- /img/products/fasteners.jpg <div class="prod-card-img ">🏗️</div> -->
+                <div class="prod-card-body ">
+                    <div class="prod-card-title ">Крепёж и расходники</div>
+                    <div class="prod-card-desc ">Саморезы, анкеры, дюбели и всё необходимое для монтажа и отделки.</div>
+                </div>
+            </div>
+            <div class="prod-card reveal reveal-delay-3 ">
+                <div class="prod-card-img ">
+                    <img src="img/jg jg.png " alt="О компании ">
+                </div>
+                <div class="prod-card-body ">
+                    <div class="prod-card-title ">Опалубка перекрытий</div>
+                    <div class="prod-card-desc ">Телескопические стойки, треноги, унивилки, балка двутавровая, ламинированная фанера.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prod-cta-wrap reveal ">
+            <div class="prod-cta-box ">
+                <div class="prod-cta-text ">
+                    <strong>Более 5000 наименований</strong>
+                    <span>Подробные описания и характеристики в интернет-магазине</span>
+                </div>
+                <a href="https://global-74.ru/ " target="_blank " rel="noopener " class="btn-primary ">
+        Перейти в магазин →
+      </a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — КОНТАКТЫ
+     → index.html
+═══════════════════════════════════════════════ -->
+    <section id="contact ">
+
+        <div class="contact-info ">
+            <div class="section-tag reveal ">Контакты</div>
+            <h2 class="section-title reveal reveal-delay-1 ">Давайте обсудим<br>ваш проект</h2>
+            <p class="section-body reveal reveal-delay-2 ">
+                Мы всегда на связи и готовы подобрать материалы, рассчитать объёмы и оптимизировать расходы для вашего проекта.
+            </p>
+
+            <div class="contact-items reveal reveal-delay-2 ">
+                <a href="tel:+79227200233 " class="contact-item ">
+                    <div class="contact-icon ">📞</div>
+                    <div>
+                        <div class="contact-label ">Телефон</div>
+                        <div class="contact-value ">+7 922 720-02-33</div>
+                    </div>
+                </a>
+                <a href="mailto:74.global@bk.ru " class="contact-item ">
+                    <div class="contact-icon ">✉️</div>
+                    <div>
+                        <div class="contact-label ">Email</div>
+                        <div class="contact-value ">74.global@bk.ru</div>
+                    </div>
+                </a>
+                <div class="contact-item " style="cursor: default; ">
+                    <div class="contact-icon ">📍</div>
+                    <div>
+                        <div class="contact-label ">Адрес офиса</div>
+                        <div class="contact-value ">г. Челябинск, ул. Новоэлеваторная, д. 49, оф. 214</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-row reveal reveal-delay-3 ">
+                <a href="https://vk.com/global74 " target="_blank " rel="noopener " class="social-btn ">
+        VK → ВКонтакте
+      </a>
+                <a href="https://t.me/Global_74 " target="_blank " rel="noopener " class="social-btn ">
+        ✈ Telegram
+      </a>
+            </div>
+        </div>
+
+        <!-- форма обратной связи -->
+        <div class="contact-form reveal reveal-delay-2 ">
+            <div class="form-title ">Отправить запрос</div>
+            <div class="form-sub ">Ответим в течение рабочего дня</div>
+
+            <div id="formBody ">
+                <div class="form-group ">
+                    <label for="fname ">ВАШЕ ИМЯ</label>
+                    <input type="text " id="fname " placeholder="Иван Иванов " autocomplete="name ">
+                </div>
+                <div class="form-group ">
+                    <label for="femail ">EMAIL</label>
+                    <input type="email " id="femail " placeholder="ivan@example.com " autocomplete="email ">
+                </div>
+                <div class="form-group ">
+                    <label for="fmsg ">СООБЩЕНИЕ</label>
+                    <textarea id="fmsg " placeholder="Расскажите о вашем проекте... "></textarea>
+                </div>
+                <!-- кнопка вызывает submitForm() из main.js -->
+                <button class="form-submit " onclick="submitForm() ">
+        Отправить запрос →
+      </button>
+            </div>
+
+            <!-- показывается после успешной отправки -->
+            <div class="form-success " id="formSuccess ">
+                ✅ Спасибо! Мы свяжемся с вами в ближайшее время.
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+     HTML — ФУТЕР
+     → index.html
+═══════════════════════════════════════════════ -->
+    <footer>
+        <a href="#hero " class="footer-logo ">ГЛОБАЛ<span>74</span></a>
+        <p class="footer-copy ">© Глобал74, 2025. Все права защищены.</p>
+        <div class="footer-links " aria-label="Навигация футера ">
+            <a href="#about ">О компании</a>
+            <a href="#products ">Продукция</a>
+            <a href="#contact ">Контакты</a>
+            <a href="https://global-74.ru/ " target="_blank " rel="noopener ">Магазин</a>
+        </div>
+    </footer>
+
+
+
+    <script src="js/main.js "></script>
+
+
+</body>
+
+</html>
