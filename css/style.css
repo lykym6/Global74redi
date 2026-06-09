@@ -642,6 +642,8 @@ section {
     background: linear-gradient(135deg, rgba(232, 119, 34, 0.07) 0%, transparent 60%);
     opacity: 0;
     transition: opacity var(--transition);
+    pointer-events: none; /* псевдоэлемент не перехватывает клики */
+    z-index: 0;
 }
 
 .adv-card:hover {
@@ -651,6 +653,11 @@ section {
 
 .adv-card:hover::before {
     opacity: 1;
+}
+
+.adv-card > * {
+    position: relative;
+    z-index: 1; /* контент всегда поверх ::before оверлея */
 }
 
 .adv-num {
