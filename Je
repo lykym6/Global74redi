@@ -1,0 +1,290 @@
+/* =====================================================
+   ФОРМА ОБРАТНОЙ СВЯЗИ
+   ===================================================== */
+
+let formSending = false;
+
+async function submitForm() {
+
+    if (formSending) {
+        return;
+    }
+
+    // =================================================
+    // ПОЛУЧАЕМ ДАННЫЕ
+    // =================================================
+
+    const name = document
+        .getElementById('fname')
+        .value
+        .trim();
+
+    const email = document
+        .getElementById('femail')
+        .value
+        .trim();
+
+    const message = document
+        .getElementById('fmsg')
+        .value
+        .trim();
+
+    const website = document
+        .getElementById('website')
+        .value
+        .trim();
+
+    const privacyConsent = document
+        .getElementById('privacyConsent')
+        .checked;
+
+
+    // =================================================
+    // ПРОВЕРКА ИМЕНИ
+    // =================================================
+
+    if (!name) {
+
+        alert('Пожалуйста, введите ваше имя');
+        return;
+
+    }
+
+
+    // =================================================
+    // ПРОВЕРКА EMAIL
+    // =================================================
+
+    if (!email) {
+
+        alert('Пожалуйста, введите email');
+        return;
+
+    }
+
+
+    const emailRegex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!emailRegex.test(email)) {
+
+        alert('Пожалуйста, введите корректный email');
+        return;
+
+    }
+
+
+    // =================================================
+    // ПРОВЕРКА СООБЩЕНИЯ
+    // =================================================
+
+    if (!message) {
+
+        alert('Пожалуйста, напишите сообщение');
+        return;
+
+    }
+
+
+    // =================================================
+    // ПРОВЕРКА СОГЛАСИЯ
+    // =================================================
+
+    if (!privacyConsent) {
+
+        alert(
+            'Пожалуйста, подтвердите согласие ' +
+            'на обработку персональных данных.'
+        );
+
+        return;
+
+    }
+
+
+    // =================================================
+    // HONEYPOT
+    // =================================================
+
+    if (website !== '') {
+
+        alert('Не удалось отправить сообщение');
+        return;
+
+    }
+
+
+    // =================================================
+    // БЛОКИРУЕМ ПОВТОРНУЮ ОТПРАВКУ
+    // =================================================
+
+    formSending = true;
+
+
+    const button =
+        document.getElementById('formSubmit');
+
+
+    button.disabled = true;
+
+    button.textContent =
+        'Отправляем...';
+
+
+    // =================================================
+    // FORM DATA
+    // =================================================
+
+    const formData = new FormData();
+
+
+    formData.append(
+        'name',
+        name
+    );
+
+
+    formData.append(
+        'email',
+        email
+    );
+
+
+    formData.append(
+        'message',
+        message
+    );
+
+
+    formData.append(
+        'website',
+        website
+    );
+
+
+    // Передаём согласие на сервер
+    formData.append(
+        'privacyConsent',
+        privacyConsent ? '1' : '0'
+    );
+
+
+    // =================================================
+    // ОТПРАВКА НА PHP
+    // =================================================
+
+    try {
+
+        const response = await fetch(
+            '/submit.php',
+            {
+                method: 'POST',
+                body: formData
+            }
+        );
+
+
+        // =================================================
+        // ПРОВЕРКА HTTP
+        // =================================================
+
+        if (!response.ok) {
+
+            throw new Error(
+                'HTTP error: ' +
+                response.status
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        // =================================================
+        // УСПЕШНАЯ ОТПРАВКА
+        // =================================================
+
+        if (data.success) {
+
+            document
+                .getElementById('formBody')
+                .style.display = 'none';
+
+
+            document
+                .getElementById('formSuccess')
+                .style.display = 'block';
+
+
+            // Очищаем поля
+
+            document
+                .getElementById('fname')
+                .value = '';
+
+
+            document
+                .getElementById('femail')
+                .value = '';
+
+
+            document
+                .getElementById('fmsg')
+                .value = '';
+
+
+            document
+                .getElementById('privacyConsent')
+                .checked = false;
+
+
+            return;
+
+        }
+
+
+        // =================================================
+        // ОШИБКА ОТ PHP
+        // =================================================
+
+        alert(
+            data.message ||
+            'Не удалось отправить сообщение'
+        );
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            'Ошибка отправки формы:',
+            error
+        );
+
+
+        alert(
+            'Ошибка соединения с сервером. ' +
+            'Попробуйте ещё раз.'
+        );
+
+    }
+
+
+    finally {
+
+        formSending = false;
+
+
+        button.disabled = false;
+
+
+        button.textContent =
+            'Отправить запрос →';
+
+    }
+
+}
