@@ -1,0 +1,145 @@
+catalog/view/theme/default/template/product/product.twig:68:              <form class="form-horizontal" id="form-review">
+catalog/view/theme/default/template/product/product.twig:450:   $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/account/voucher.twig:22:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/return_form.twig:22:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/edit.twig:21:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/edit.twig:248:      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/account/reset.twig:18:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/login.twig:35:            <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/default/template/account/address_form.twig:18:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/address_form.twig:309:      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/account/password.twig:18:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/affiliate.twig:21:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/affiliate.twig:346: $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/account/tracking.twig:19:      <form class="form-horizontal">
+catalog/view/theme/default/template/account/newsletter.twig:18:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/address_list.twig:28:           <form  action="{{ result.delete }}" method="post" enctype="multipart/form-data" id="form-address-{{ result.address_id }}">
+catalog/view/theme/default/template/account/register.twig:22:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/account/register.twig:355:  $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/account/forgotten.twig:22:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/information/contact.twig:103:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/extension/module/paypal_smart_button/payment_address.twig:9:                                    <form>
+catalog/view/theme/default/template/extension/module/paypal_smart_button/shipping_address.twig:9:                                   <form class="form-horizontal">
+catalog/view/theme/default/template/extension/module/paypal_smart_button/confirm.twig:106:                      <form action="{{ action_shipping }}" method="post" id="shipping_form">
+catalog/view/theme/default/template/extension/module/paypal_smart_button/confirm.twig:351:              $('body').prepend('<form enctype="multipart/form-data" id="form_upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/extension/module/paypal_smart_button/confirm.twig:517:              $('body').prepend('<form enctype="multipart/form-data" id="form_upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/extension/module/pp_braintree_button.twig:4:  <form method="POST" action="{{ action }}" id="braintree-express-form"></form>
+catalog/view/theme/default/template/extension/module/custom/login.twig:36:    <form id="auth-form" {% if account != 'auth' %} 'style="display: none;"' {% endif %}  >
+catalog/view/theme/default/template/extension/module/custom/customer.twig:214:  $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/extension/module/custom/cart.twig:2:<form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/default/template/extension/credit_card/sagepay_server_list.twig:80:                          html = '<form action="' + json['redirect'] + '" method="post" id="redirect">';
+catalog/view/theme/default/template/extension/credit_card/sagepay_direct_form.twig:18:      <form class="form-horizontal" action="{{ add }}" method="post">
+catalog/view/theme/default/template/extension/payment/sagepay_direct.twig:4:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/sagepay_direct.twig:153:            html = '<form action="' + json['ACSURL'] + '" method="post" id="3dauth">';
+catalog/view/theme/default/template/extension/payment/securetrading_pp.twig:1:<form action="https://payments.securetrading.net/process/payments/details" method="POST" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/skrill.twig:1:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/worldpay.twig:18: <form id="payment-existing-form" action="{{ form_submit }}" method="post" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/worldpay.twig:50: <form style="display: none" id="payment-new-form" action="{{ form_submit }}" method="post" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/worldpay.twig:52:   <form id="payment-new-form" action="{{ form_submit }}" method="post" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/securetrading_ws.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/securetrading_ws.twig:85:                                 $('#payment').before('<form id="threed-form" action="' + json['acs_url'] + '" method="POST"><input type="hidden" name="PaReq" value="' + json['pareq'] + '" /><input type="hidden" name="MD" value="' + json['md'] + '" /><input type="hidden" name="TermUrl" value="' + json['term_url'] + '" /></form>');
+catalog/view/theme/default/template/extension/payment/realex.twig:1:<form action="{{ action }}" method="POST" class="form-horizontal" id="realex_form_redirect">
+catalog/view/theme/default/template/extension/payment/pp_braintree_confirm.twig:45:          <form action="{{ action_shipping }}" method="post" id="shipping_form">
+catalog/view/theme/default/template/extension/payment/cardinity.twig:5:<form class="form-horizontal" id="payment">
+catalog/view/theme/default/template/extension/payment/klarna_account.twig:5:<form id="payment" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/eway.twig:4:<form action="{{ action }}" method="POST" class="form-horizontal" id="eway-payment-form">
+catalog/view/theme/default/template/extension/payment/sagepay_server.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/sagepay_server.twig:101:                          html = '<form action="' + json['redirect'] + '" method="post" id="redirect">';
+catalog/view/theme/default/template/extension/payment/webmoney_wmb.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/firstdata.twig:1:<form action="{{ action }}" method="POST" class="form-horizontal" id="firstdata_form_redirect">
+catalog/view/theme/default/template/extension/payment/firstdata_remote.twig:1:<form class="form-horizontal" id="payment_form">
+catalog/view/theme/default/template/extension/payment/bluepay_redirect.twig:1:<form class="form-horizontal" action="https://secure.bluepay.com/interfaces/bp10emu" method=POST>
+catalog/view/theme/default/template/extension/payment/paymate.twig:1:<form action="{{ action }}" method="get">
+catalog/view/theme/default/template/extension/payment/cardconnect.twig:1:<form id="cardconnect-form" action="{{ action }}" method="post" class="form form-horizontal">
+catalog/view/theme/default/template/extension/payment/pp_express_confirm.twig:40:      <form action="{{ action_shipping }}" method="post" id="shipping_form">
+catalog/view/theme/default/template/extension/payment/pp_pro_iframe.twig:5:  <form action="{{ url }}" method="post" name="ppform" id="ppform">
+catalog/view/theme/default/template/extension/payment/pp_standard.twig:4:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/g2apay.twig:1:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/alipay_cross.twig:1:<form id="alipaysubmit" name="alipaysubmit" action="{{ action }}" method="GET">
+catalog/view/theme/default/template/extension/payment/pilibaba.twig:8:<form action="{{ url }}" id="pilibaba-form" method="post">
+catalog/view/theme/default/template/extension/payment/liqpay.twig:1:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/alipay.twig:1:<form id="alipaysubmit" name="alipaysubmit" action="{{ action }}" method="POST">
+catalog/view/theme/default/template/extension/payment/webmoney_wmr.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/globalpay_remote.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/globalpay_remote.twig:91:        html  = '<form action="' + json['ACSURL'] + '" method="post" id="3dauth">';
+catalog/view/theme/default/template/extension/payment/pp_payflow.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/webmoney_wme.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/nochex.twig:1:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/globalpay.twig:1:<form action="{{ action }}" method="POST" class="form-horizontal" id="globalpay_form_redirect">
+catalog/view/theme/default/template/extension/payment/twocheckout.twig:1:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/cardinity_3ds.twig:2:<form id="cardinity-3ds-form" name="ThreeDForm" method="POST" action="{{ url }}">
+catalog/view/theme/default/template/extension/payment/webmoney_wmv.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/pp_braintree.twig:12:<form id="braintree-new" style="display:none;" method="post" action="{{ payment_url }}" class="form-horizontal" autocomplete="off">
+catalog/view/theme/default/template/extension/payment/pp_braintree.twig:86:<form id="braintree-vaulted" style="display:none;" method="post" action="{{ payment_url }}" class="form-horizontal" autocomplete="off">
+catalog/view/theme/default/template/extension/payment/authorizenet_aim.twig:1:<form id="payment" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/web_payment_software.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/paypoint.twig:1:<form action="https://www.secpay.com/java-bin/ValCard" method="post">
+catalog/view/theme/default/template/extension/payment/authorizenet_sim.twig:1:<form action="https://secure.authorize.net/gateway/transact.dll" method="post">
+catalog/view/theme/default/template/extension/payment/laybuy.twig:1:<form id="laybuy-form" action="{{ action }}" method="post" class="form form-horizontal">
+catalog/view/theme/default/template/extension/payment/squareup.twig:9:<form class="form-horizontal" action="{{ action }}" method="POST" id="squareup_card_details_form" style="display: none;">
+catalog/view/theme/default/template/extension/payment/perpetual_payments.twig:1:<form id="payment" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/pp_pro.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/pp_pro_iframe_body.twig:7:<form action="{{ url }}" method="post" name="ppform" id="ppform">
+catalog/view/theme/default/template/extension/payment/payza.twig:1:<form action="{{ action }}" method="post">
+catalog/view/theme/default/template/extension/payment/bluepay_hosted.twig:1:<form action="https://secure.bluepay.com/interfaces/shpf" method="POST">
+catalog/view/theme/default/template/extension/payment/webmoney_wmk.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/ocstore_w1.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/webmoney_wmu.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/extension/payment/paypal.twig:317:          <form id="paypal_card_form" class="well">
+catalog/view/theme/default/template/extension/payment/klarna_invoice.twig:5:<form id="payment" class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/realex_remote.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/realex_remote.twig:91:                            html  = '<form action="' + json['ACSURL'] + '" method="post" id="3dauth">';
+catalog/view/theme/default/template/extension/payment/sagepay_us.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/extension/payment/webmoney_wmz.twig:1:<form action="{{ action }}" method="post" id="checkout">
+catalog/view/theme/default/template/blog/article.twig:154:              <form class="form-horizontal" id="form-review">
+catalog/view/theme/default/template/blog/article.twig:281:      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/common/language.twig:3:  <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-language">
+catalog/view/theme/default/template/common/buyoneclick.twig:6:      <form id="boc_form" action="" role="form">
+catalog/view/theme/default/template/common/currency.twig:3:  <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-currency">
+catalog/view/theme/default/template/checkout/payment_address.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/checkout/payment_address.twig:243:  $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/checkout/guest_shipping.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/checkout/guest_shipping.twig:228:   $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/checkout/guest.twig:405:    $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/checkout/shipping_address.twig:1:<form class="form-horizontal">
+catalog/view/theme/default/template/checkout/shipping_address.twig:242: $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/checkout/register.twig:436: $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/default/template/checkout/cart.twig:36:      <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/default/template/affiliate/login.twig:36:            <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/default/template/affiliate/register.twig:23:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/default/template/affiliate/register.twig:639:        $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/product/product.twig:484:              <form id="form-review">
+catalog/view/theme/stroimarket/template/product/product.twig:750:       $("body").prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/account/voucher.twig:38:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/return_form.twig:36:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/edit.twig:35:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/edit.twig:268:  $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/account/reset.twig:32:          <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/stroimarket/template/account/login.twig:34:              <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/address_form.twig:31:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/address_form.twig:330:  $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/account/password.twig:31:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/affiliate.twig:35:          <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/stroimarket/template/account/affiliate.twig:363:     $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/account/tracking.twig:33:          <form>
+catalog/view/theme/stroimarket/template/account/newsletter.twig:31:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/register.twig:36:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/account/register.twig:370:      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/account/forgotten.twig:35:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/information/contact.twig:111:      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+catalog/view/theme/stroimarket/template/blog/article.twig:204:                  <form class="form-horizontal" id="form-review">
+catalog/view/theme/stroimarket/template/blog/article.twig:336:          $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/common/language.twig:3:  <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-language">
+catalog/view/theme/stroimarket/template/common/currency.twig:3:  <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-currency">
+catalog/view/theme/stroimarket/template/checkout/payment_address.twig:1:<form class="form-horizontal">
+catalog/view/theme/stroimarket/template/checkout/payment_address.twig:243:      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/checkout/guest_shipping.twig:1:<form class="form-horizontal">
+catalog/view/theme/stroimarket/template/checkout/guest_shipping.twig:228:       $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/checkout/guest.twig:405:        $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/checkout/shipping_address.twig:1:<form class="form-horizontal">
+catalog/view/theme/stroimarket/template/checkout/shipping_address.twig:242:     $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/checkout/register.twig:436:     $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+catalog/view/theme/stroimarket/template/checkout/cart.twig:51:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/affiliate/login.twig:47:                <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/affiliate/register.twig:37:          <form action="{{ action }}" method="post" enctype="multipart/form-data">
+catalog/view/theme/stroimarket/template/affiliate/register.twig:630:    $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
