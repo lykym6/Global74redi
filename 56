@@ -1,0 +1,176 @@
+<?php
+class ControllerExtensionFeedGoogleSitemap extends Controller {
+
+    public function index() {
+
+        $this->load->model('catalog/product');
+        $this->load->model('catalog/category');
+        $this->load->model('catalog/information');
+
+        // Главный sitemap.xml
+        if (!isset($this->request->get['type'])) {
+
+            $output  = '<?xml version="1.0" encoding="UTF-8"?>';
+            $output .= '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+            // Товары: по 1000 URL
+            $total_products = $this->model_catalog_product->getTotalProducts();
+            $limit = 1000;
+
+            for ($start = 0; $start < $total_products; $start += $limit) {
+                $output .= '<sitemap>';
+                $output .= '<loc>' . HTTPS_SERVER . 'index.php?route=extension/feed/google_sitemap&amp;type=products&amp;start=' . $start . '</loc>';
+                $output .= '</sitemap>';
+            }
+
+            // Категории
+            $output .= '<sitemap>';
+            $output .= '<loc>' . HTTPS_SERVER . 'index.php?route=extension/feed/google_sitemap&amp;type=categories</loc>';
+            $output .= '</sitemap>';
+
+            // Информационные страницы
+            $output .= '<sitemap>';
+            $output .= '<loc>' . HTTPS_SERVER . 'index.php?route=extension/feed/google_sitemap&amp;type=information</loc>';
+            $output .= '</sitemap>';
+
+            $output .= '</sitemapindex>';
+
+            $this->response->addHeader('Content-Type: application/xml; charset=UTF-8');
+            $this->response->setOutput($output);
+
+            return;
+        }
+
+        // Товары
+        if ($this->request->get['type'] == 'products') {
+            $this->products();
+            return;
+        }
+
+        // Категории
+        if ($this->request->get['type'] == 'categories') {
+            $this->categories();
+            return;
+        }
+
+        // Информационные страницы
+        if ($this->request->get['type'] == 'information') {
+            $this->information();
+            return;
+        }
+    }
+
+
+    protected function products() {
+
+        $start = isset($this->request->get['start'])
+            ? (int)$this->request->get['start']
+            : 0;
+
+        $limit = 1000;
+
+        $products = $this->model_catalog_product->getProducts(array(
+            'start' => $start,
+            'limit' => $limit,
+            'sort'  => 'p.product_id',
+            'order' => 'ASC'
+        ));
+
+        $output  = '<?xml version="1.0" encoding="UTF-8"?>';
+        $output .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+        foreach ($products as $product) {
+
+            $url = $this->url->link(
+                'product/product',
+                'product_id=' . (int)$product['product_id']
+            );
+
+            $output .= '<url>';
+            $output .= '<loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>';
+
+            if (!empty($product['date_modified']) && $product['date_modified'] != '0000-00-00 00:00:00') {
+                $output .= '<lastmod>' .
+                    date('c', strtotime($product['date_modified'])) .
+                    '</lastmod>';
+            }
+
+            $output .= '</url>';
+        }
+
+        $output .= '</urlset>';
+
+        $this->response->addHeader('Content-Type: application/xml; charset=UTF-8');
+        $this->response->setOutput($output);
+    }
+
+
+    protected function categories() {
+
+        $output  = '<?xml version="1.0" encoding="UTF-8"?>';
+        $output .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+        $this->addCategories(0, $output);
+
+        $output .= '</urlset>';
+
+        $this->response->addHeader('Content-Type: application/xml; charset=UTF-8');
+        $this->response->setOutput($output);
+    }
+
+
+    protected function addCategories($parent_id, &$output, $current_path = '') {
+
+        $categories = $this->model_catalog_category->getCategories($parent_id);
+
+        foreach ($categories as $category) {
+
+            if ($current_path) {
+                $path = $current_path . '_' . $category['category_id'];
+            } else {
+                $path = $category['category_id'];
+            }
+
+            $url = $this->url->link(
+                'product/category',
+                'path=' . $path
+            );
+
+            $output .= '<url>';
+            $output .= '<loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>';
+            $output .= '</url>';
+
+            $this->addCategories(
+                $category['category_id'],
+                $output,
+                $path
+            );
+        }
+    }
+
+
+    protected function information() {
+
+        $informations = $this->model_catalog_information->getInformations();
+
+        $output  = '<?xml version="1.0" encoding="UTF-8"?>';
+        $output .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+        foreach ($informations as $information) {
+
+            $url = $this->url->link(
+                'information/information',
+                'information_id=' . (int)$information['information_id']
+            );
+
+            $output .= '<url>';
+            $output .= '<loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>';
+            $output .= '</url>';
+        }
+
+        $output .= '</urlset>';
+
+        $this->response->addHeader('Content-Type: application/xml; charset=UTF-8');
+        $this->response->setOutput($output);
+    }
+}
